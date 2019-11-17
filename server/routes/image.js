@@ -30,9 +30,7 @@ const upload = multer({
 });
 
 /* 
-    stores image in uploads folder
-    using multer and creates a reference to the 
-    file
+    stores image in uploads folder using multer and creates a reference to the file
 */
 ImageRouter.route("/uploadmulter")
     .post(upload.single('imageData'), (req, res, next) => {
@@ -54,10 +52,7 @@ ImageRouter.route("/uploadmulter")
     });
 
 /*
-    upload image in base64 format, thereby,
-    directly storing it in mongodb datanase
-    along with images uploaded using firebase
-    storage
+    upload image and directly storing it in mongodb database    
 */    
 ImageRouter.route("/uploadbase")
     .post((req, res, next) => {
